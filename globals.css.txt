@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b0e17;
+  color: #fff;
+}
+
+header {
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #11182a;
+  color: #d4af37;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero img.active {
+  opacity: 1;
+}
+
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section h2 {
+  color: #d4af37;
+  font-size: 2rem;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.plan-card {
+  background: #11182a;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #d4af37;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #0f1423;
+  color: #aaa;
+  border-top: 1px solid #1e2233;
+  font-size: 0.9rem;
+}

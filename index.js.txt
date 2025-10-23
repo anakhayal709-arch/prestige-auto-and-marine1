@@ -1,0 +1,61 @@
+import { useEffect, useState } from 'react';
+
+export default function Home() {
+  const banners = [
+    'https://images.unsplash.com/photo-1503376780353-7e6692767b70',
+    'https://images.unsplash.com/photo-1502877338535-766e1452684a',
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % banners.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <>
+      <header>
+        <h1>Prestige Auto & Marine</h1>
+        <nav>Luxury Vehicle Inspection</nav>
+      </header>
+
+      <section className="hero">
+        {banners.map((img, i) => (
+          <img
+            key={i}
+            src={img + '?auto=format&fit=crop&w=1920&q=80'}
+            alt={`Banner ${i}`}
+            className={i === current ? 'active' : ''}
+          />
+        ))}
+      </section>
+
+      <section className="section">
+        <h2>Our Inspection Plans</h2>
+        <div className="plans">
+          <div className="plan-card">
+            <h3>Standard Plan</h3>
+            <p>Essential diagnostics for cars, bikes & yachts.</p>
+          </div>
+          <div className="plan-card">
+            <h3>Premier Plan</h3>
+            <p>Advanced inspection with performance analysis.</p>
+          </div>
+          <div className="plan-card">
+            <h3>Exotic Plan</h3>
+            <p>Elite-level assessment for exotic & luxury vehicles.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>“Precision. Performance. Perfection.”</p>
+        <p>© 2025 Prestige Auto & Marine — Luxury Vehicle Inspection Specialists</p>
+      </footer>
+    </>
+  );
+}
