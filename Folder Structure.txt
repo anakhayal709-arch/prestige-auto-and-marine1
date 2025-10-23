@@ -1,0 +1,11 @@
+prestige-auto-and-marine/
+├── package.json
+├── next.config.js
+├── vercel.json
+├── pages/
+│   ├── _app.js
+│   └── index.js
+├── styles/
+│   └── globals.css
+└── public/
+    └── favicon.ico
